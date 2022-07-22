@@ -1,4 +1,7 @@
 import Navigation from "./components/navigation/navigation.component";
+import Attribution from "./components/attribution/attribution.component";
+
+import ImageHero from "./assets/image-hero-mobile.png";
 
 import "./App.scss";
 
@@ -6,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Navigation />
+      <img src={ImageHero} alt="hero-img" />
       <div className="card">
         <h2>Make remote work</h2>
         <p>
@@ -14,25 +18,7 @@ function App() {
         </p>
         <button>Learn more</button>
       </div>
-      <div class="attribution">
-        Challenge by{" "}
-        <a
-          href="https://www.frontendmentor.io?ref=challenge"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Frontend Mentor
-        </a>
-        . Coded by{" "}
-        <a
-          href="https://charlie-alonso.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Charlie Alonso
-        </a>
-        .
-      </div>
+      <Attribution />
     </div>
   );
 }
