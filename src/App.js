@@ -1,14 +1,26 @@
-import "./App.css";
+import Navigation from "./components/navigation/navigation.component";
+
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      Features Company Careers About Login Register Make remote work Get your
-      team in sync, no matter your location. Streamline processes, create team
-      rituals, and watch productivity soar. Learn more
+      <Navigation />
+      <div className="card">
+        <h2>Make remote work</h2>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <button>Learn more</button>
+      </div>
       <div class="attribution">
         Challenge by{" "}
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          rel="noreferrer"
+          target="_blank"
+        >
           Frontend Mentor
         </a>
         . Coded by{" "}
