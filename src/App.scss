@@ -10,7 +10,8 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  width: 100%;
+  padding: 20px;
   .logo {
     width: 5rem;
   }
@@ -32,8 +33,11 @@
   display: grid;
   gap: 1rem;
   // place-content: center;
-  // place-items: center;
+  place-items: center;
   font-family: "Epilogue", sans-serif;
+  .card-container {
+    width: min(100%, 400px);
+  }
   .card {
     display: grid;
     place-items: center;
