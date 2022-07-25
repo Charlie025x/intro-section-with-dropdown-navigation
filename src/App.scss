@@ -20,43 +20,9 @@
   }
 }
 
-.client-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  align-items: center;
-}
-
 .App {
   display: grid;
   gap: 1rem;
-  // place-content: center;
   place-items: center;
   font-family: "Epilogue", sans-serif;
-  .card-container {
-    width: min(100%, 400px);
-  }
-  .card {
-    display: grid;
-    place-items: center;
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
-    h2 {
-      font-size: 2rem;
-      text-align: center;
-      color: var(--clr-off-black);
-      margin-bottom: 0;
-    }
-    p {
-      color: var(--clr-gray);
-      text-align: center;
-      line-height: 1.5;
-    }
-  }
-}
-
-img {
-  width: 100%;
 }
