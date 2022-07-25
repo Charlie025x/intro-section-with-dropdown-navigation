@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+
+:root {
+  --clr-off-white: hsl(0, 0%, 98%);
+  --clr-gray: hsl(0, 0%, 41%);
+  --clr-off-black: hsl(0, 0%, 8%);
+  font-size: 18px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  .logo {
+    width: 5rem;
+  }
+  .menu-icon {
+    width: 2rem;
+  }
+}
+
+.client-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  align-items: center;
+}
+
+.App {
+  display: grid;
+  gap: 1rem;
+  // place-content: center;
+  // place-items: center;
+  font-family: "Epilogue", sans-serif;
+  .card {
+    display: grid;
+    place-items: center;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      color: var(--clr-off-black);
+      margin-bottom: 0;
+    }
+    p {
+      color: var(--clr-gray);
+      text-align: center;
+      line-height: 1.5;
+    }
+  }
+}
+
+img {
+  width: 100%;
+}
