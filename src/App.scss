@@ -7,22 +7,9 @@
   font-size: 18px;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 20px;
-  .logo {
-    width: 5rem;
-  }
-  .menu-icon {
-    width: 2rem;
-  }
-}
-
 .App {
-  display: grid;
-  gap: 1rem;
-  place-items: center;
+  // display: grid;
+  // gap: 1rem;
+  // place-items: center;
   font-family: "Epilogue", sans-serif;
 }

@@ -10,11 +10,11 @@ import "./App.scss";
 function App() {
   return (
     <div className="App">
-      {/* <Navigation /> */}
-      <div className="nav">
+      <Navigation />
+      {/* <div className="nav">
         <img className="logo" src={Logo} alt="logo" />
         <img className="menu-icon" src={MenuIcon} alt="menu icon" />
-      </div>
+      </div> */}
       <Card />
       <Attribution />
     </div>

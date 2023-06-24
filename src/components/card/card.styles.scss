@@ -1,23 +1,31 @@
 .card-container {
+  margin-inline: auto;
   width: min(100%, 400px);
+  display: grid;
   .hero-img {
     width: 100%;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
   }
   .card {
     display: grid;
     place-items: center;
     margin-right: 0.5rem;
     margin-left: 0.5rem;
+    text-align: center;
     h2 {
       font-size: 2rem;
-      text-align: center;
+      // text-align: center;
       color: var(--clr-off-black);
       margin-bottom: 0;
     }
     p {
       color: var(--clr-gray);
-      text-align: center;
+      // text-align: center;
       line-height: 1.5;
+    }
+    button {
+      margin-bottom: 3rem;
     }
   }
 
@@ -30,6 +38,34 @@
     align-items: center;
     img {
       width: 100%;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .card-container {
+    // direction: rtl;
+    width: min(100% - 4rem, 60rem);
+    // min-height: (35rem);
+    grid-template-columns: 1fr 1fr;
+    picture {
+      order: 1;
+    }
+    .card {
+      text-align: left;
+      place-items: center start;
+      h2 {
+        font-size: 4rem;
+        width: 85%;
+      }
+      p {
+        width: 80%;
+      }
+
+      .client-container {
+        margin-left: 0;
+      }
     }
   }
 }
