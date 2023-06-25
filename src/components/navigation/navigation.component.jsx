@@ -1,61 +1,96 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 import Logo from "../../assets/logo.svg";
 import MenuIcon from "../../assets/icon-menu.svg";
 import CloseIcon from "../../assets/icon-close-menu.svg";
+import arrowDown from "../../assets/icon-arrow-down.svg";
+import arrowUp from "../../assets/icon-arrow-up.svg";
+import TodoIcon from "../../assets/icon-todo.svg";
+import CalanderIcon from "../../assets/icon-calendar.svg";
+import RemindersIcon from "../../assets/icon-reminders.svg";
+import PlanningIcon from "../../assets/icon-planning.svg";
 
 import Button from "../button/button.component";
 
 import "./navigation.styles.scss";
 
 const Navigation = () => {
-  const [menuToggle, setMenuToggle] = useState(false);
+  const [navMenuToggle, setNavMenuToggle] = useState(false);
+  // const [accordionToggle, setAccordionToggle] = useState(false);
 
-  useEffect(() => {
-    console.log(menuToggle);
-  });
+  const ulRef = useRef();
 
   const showNavbar = () => {
-    setMenuToggle(!menuToggle);
-    console.log(menuToggle);
+    setNavMenuToggle(!navMenuToggle);
+  };
+
+  // const showAccordion = () => {
+  //   setAccordionToggle(!accordionToggle);
+  // };
+
+  const accordionToggle = () => {
+    ulRef.current.classList.toggle("height-0");
   };
 
   return (
     <nav>
       <img className="logo" src={Logo} alt="logo" />
-      {/* <img
-        onClick={showNavbar}
-        className="menu-icon"
-        src={
-          navRef.current.classList.contains("responsive_nav")
-            ? MenuIcon
-            : CloseIcon
-        }
-        alt="menu icon"
-      /> */}
-      {/* <button>
-        <img className="menu-icon" src={MenuIcon} alt="menu icon" />
-      </button> */}
-      <ul className={`nav-links ${menuToggle ? "responsive_nav" : ""}`}>
-        <li>Features</li>
-        <li>Company</li>
-        <li>Careers</li>
-        <li>About</li>
-      </ul>
       <img
         onClick={showNavbar}
         className="menu-icon"
-        src={!menuToggle ? MenuIcon : CloseIcon}
+        src={!navMenuToggle ? MenuIcon : CloseIcon}
         alt="menu icon"
       />
-      {/* <ul className="auth-buttons">
+      <ul className={`nav-links ${navMenuToggle ? "responsive_nav" : ""}`}>
         <li>
-          <Button text="Login" />
+          Features
+          <img
+            // onClick={showAccordion}
+            onClick={accordionToggle}
+            className="accordion-toggle"
+            src={!accordionToggle ? arrowDown : arrowUp}
+            alt="menu icon"
+          />
+          {/* {accordionToggle && ( */}
+          <ul ref={ulRef}>
+            <li>
+              <img src={TodoIcon} alt="TodoIcon" /> ToDo List
+            </li>
+            <li>
+              <img src={CalanderIcon} alt="CalanderIcon" /> Calander
+            </li>
+            <li>
+              <img src={RemindersIcon} alt="RemindersIcon" /> Reminders
+            </li>
+            <li>
+              <img src={PlanningIcon} alt="PlanningIcon" /> Planning
+            </li>
+          </ul>
+          {/* )} */}
         </li>
         <li>
-          <Button text="Register" />
+          Company
+          <img
+            // onClick={showAccordion}
+            className="accordion-toggle"
+            src={!accordionToggle ? arrowDown : arrowUp}
+            alt="menu icon"
+          />
+          <ul>
+            <li>History</li>
+            <li>Our Team</li>
+            <li>Blog</li>
+          </ul>
         </li>
-      </ul> */}
+        <li>Careers</li>
+        <li>About</li>
+        {/* <li> */}
+        <Button text="Login" className="inverted no-border" />
+        {/* </li> */}
+        {/* <li> */}
+        <Button text="Register" className="inverted" />
+        {/* </li> */}
+      </ul>
     </nav>
   );
 };

@@ -1,7 +1,11 @@
 import "./button.styles.scss";
 
 const Button = (props) => {
-  return <button className="button-container">{props.text}</button>;
+  return (
+    <button className={`button-container ${props.className}`}>
+      {props.text}
+    </button>
+  );
 };
 
 export default Button;

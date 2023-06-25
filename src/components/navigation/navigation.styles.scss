@@ -12,11 +12,11 @@ nav {
   }
   .menu-icon {
     width: 2rem;
+    aspect-ratio: 1;
   }
   .close-icon {
     width: 2rem;
-    // visibility: hidden;
-    // opacity: 0;
+    aspect-ratio: 1;
   }
   ul {
     list-style-type: none;
@@ -33,22 +33,60 @@ nav {
   }
   .nav-links {
     margin: 0;
+    padding-left: 30%;
+    padding-top: 5rem;
     position: fixed;
     top: 0;
     right: 0;
     height: 100%;
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    transition: 1s;
+    align-items: start;
+    justify-content: start;
+    transition: 500ms;
     transform: translateX(100vh);
-    background-color: red;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.642) 30%,
+      #fff 0 100%
+    );
+    li {
+      padding-inline: 1rem;
+      line-height: 2.5;
+      display: block;
+      img {
+        margin-left: 0.58rem;
+        width: 0.8rem;
+      }
+      > ul {
+        padding-left: 0;
+        li {
+          padding-left: 1.5rem;
+          & img {
+            margin-left: 0;
+            margin-right: 0.8rem;
+            width: 1rem;
+          }
+        }
+      }
+    }
+    button {
+      &:first-of-type {
+        margin-top: 1rem;
+      }
+      width: calc(100% - 4rem);
+      align-self: center;
+      margin-bottom: 0;
+    }
   }
 
   .responsive_nav {
     transform: none;
+  }
+
+  .height-0 {
+    max-height: 0;
+    overflow: hidden;
   }
 }
