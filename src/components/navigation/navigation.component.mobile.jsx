@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Media from "react-media";
 
 import AccordionItem from "./AccordionItem";
 import { NavData } from "../../data";
@@ -30,12 +31,21 @@ const MobileNavigation = () => {
   return (
     <nav>
       <img className="logo" src={Logo} alt="logo" />
-      <img
-        onClick={showNavbar}
-        className="menu-icon"
-        src={!navMenuToggle ? MenuIcon : CloseIcon}
-        alt="menu icon"
-      />
+      {/* hide menu icon on desktop */}
+      <Media query="(max-width: 1023px)">
+        {(matches) => {
+          return matches ? (
+            <img
+              onClick={showNavbar}
+              className="menu-icon"
+              src={!navMenuToggle ? MenuIcon : CloseIcon}
+              alt="menu icon"
+            />
+          ) : (
+            ""
+          );
+        }}
+      </Media>
       <ul className={`nav-links ${navMenuToggle ? "responsive_nav" : ""}`}>
         {NavData.map((NavData, index) => (
           <AccordionItem

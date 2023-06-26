@@ -1,14 +1,14 @@
 nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
   width: 100%;
   padding-inline: 1rem;
   padding-block: 1.5rem;
-  // desktop padding
-  // padding-block: 2rem;
-  // padding-inline: 2.5rem;
+  color: var(--clr-gray);
   .logo {
     width: 5rem;
+    height: auto;
+    margin-top: 1em;
   }
   .menu-icon {
     width: 2rem;
@@ -20,14 +20,40 @@ nav {
   }
   ul {
     list-style-type: none;
+    display: flex;
   }
 
   li {
     display: inline-block;
+    margin-inline: 1rem;
+    img {
+      margin-left: 0.58rem;
+      width: 0.8rem;
+    }
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
+  nav {
+    padding-inline: 2.5rem;
+    .button-container {
+      margin: 0;
+      transform: translateY(-1em);
+    }
+    button:first-of-type {
+      margin-left: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    .logo {
+      margin-top: 0;
+    }
+  }
   .menu-icon {
     z-index: 5;
   }
@@ -45,7 +71,7 @@ nav {
     align-items: start;
     justify-content: start;
     transition: 500ms;
-    transform: translateX(100vh);
+    transform: translateX(110vh);
     background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.642) 30%,
@@ -55,10 +81,10 @@ nav {
       padding-inline: 1rem;
       line-height: 2.5;
       display: block;
-      img {
-        margin-left: 0.58rem;
-        width: 0.8rem;
-      }
+      // img {
+      // margin-left: 0.58rem;
+      // width: 0.8rem;
+      // }
       > ul {
         padding-left: 0;
         li {

@@ -18,7 +18,7 @@ const AccordionItem = ({ data, onToggle, active }) => {
           alt="menu icon"
         />
       )}
-      <ul className={!active && "height-0"}>
+      {/* <ul className={!active && "height-0"}>
         {submenu &&
           submenu.map((submenu, index) => (
             <li key={index}>
@@ -33,7 +33,7 @@ const AccordionItem = ({ data, onToggle, active }) => {
               <ul ref={ulRef}></ul>
             </li>
           ))}
-      </ul>
+      </ul> */}
     </li>
   );
 };
