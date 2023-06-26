@@ -50,6 +50,7 @@ const MobileNavigation = () => {
         {NavData.map((NavData, index) => (
           <AccordionItem
             key={index}
+            i={index}
             data={NavData}
             onToggle={() => handleToggle(index)}
             active={clicked === index}

@@ -18,17 +18,17 @@ nav {
     width: 2rem;
     aspect-ratio: 1;
   }
-  ul {
-    list-style-type: none;
-    display: flex;
-  }
 
   li {
     display: inline-block;
-    margin-inline: 1rem;
     img {
       margin-left: 0.58rem;
       width: 0.8rem;
+    }
+    ul li img {
+      margin-left: 0;
+      margin-right: 0.8rem;
+      width: 1rem;
     }
   }
 }
@@ -42,6 +42,37 @@ nav {
     }
     button:first-of-type {
       margin-left: auto;
+    }
+    ul {
+      list-style-type: none;
+      display: flex;
+    }
+    li {
+      position: relative;
+
+      margin-inline: 1rem;
+      ul {
+        position: absolute;
+        top: 2rem;
+        background-color: white;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.281);
+        display: grid;
+        padding: 0;
+        border-radius: 1rem;
+        line-height: 2;
+        padding-block: 1rem;
+      }
+      .ul-0 {
+        left: -4rem;
+        right: 0;
+      }
+      .ul-1 {
+        left: 0;
+        right: -1.5rem;
+      }
+    }
+    .d-none {
+      display: none;
     }
   }
 }
@@ -89,11 +120,11 @@ nav {
         padding-left: 0;
         li {
           padding-left: 1.5rem;
-          & img {
-            margin-left: 0;
-            margin-right: 0.8rem;
-            width: 1rem;
-          }
+          // & img {
+          //   margin-left: 0;
+          //   margin-right: 0.8rem;
+          //   width: 1rem;
+          // }
         }
       }
     }
