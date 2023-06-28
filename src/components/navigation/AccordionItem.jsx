@@ -1,4 +1,5 @@
 import ArrowDown from "../../assets/icon-arrow-down.svg";
+import ArrowUp from "../../assets/icon-arrow-up.svg";
 
 import { useRef } from "react";
 
@@ -9,13 +10,13 @@ const AccordionItem = ({ i, data, onToggle, active }) => {
   const ulRef = useRef();
 
   return (
-    <li>
+    <li className="disable-select">
       {title}
       {submenu && (
         <img
           onClick={onToggle}
           className="accordion-toggle"
-          src={ArrowDown}
+          src={!active ? ArrowDown : ArrowUp}
           alt="menu icon"
         />
       )}
@@ -30,7 +31,6 @@ const AccordionItem = ({ i, data, onToggle, active }) => {
                 />
               )}
               {submenu}
-
               <ul ref={ulRef}></ul>
             </li>
           ))}

@@ -21,9 +21,13 @@ nav {
 
   li {
     display: inline-block;
-    img {
-      margin-left: 0.58rem;
-      width: 0.8rem;
+    position: relative;
+    &:hover {
+      cursor: pointer;
+    }
+    .accordion-toggle {
+      position: absolute;
+      box-sizing: content-box;
     }
     ul li img {
       margin-left: 0;
@@ -31,8 +35,16 @@ nav {
       width: 1rem;
     }
   }
+  .disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+  }
 }
 
+// desktop size css
 @media only screen and (min-width: 1024px) {
   nav {
     padding-inline: 2.5rem;
@@ -46,29 +58,41 @@ nav {
     ul {
       list-style-type: none;
       display: flex;
+      align-items: start;
     }
     li {
       position: relative;
-
+      padding-block: 1em;
       margin-inline: 1rem;
+      .accordion-toggle {
+        top: 0;
+        right: -1rem;
+        width: 0.8rem;
+        padding-left: 5.2rem;
+        padding-block: 1.3rem;
+      }
       ul {
         position: absolute;
-        top: 2rem;
+        top: 3rem;
         background-color: white;
         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.281);
         display: grid;
+        justify-content: center;
         padding: 0;
         border-radius: 1rem;
         line-height: 2;
-        padding-block: 1rem;
+        padding-block: 1.5rem;
+        li {
+          padding-block: 0;
+        }
       }
       .ul-0 {
-        left: -4rem;
-        right: 0;
+        left: -5rem;
+        right: -1rem;
       }
       .ul-1 {
-        left: 0;
-        right: -1.5rem;
+        left: -0.5rem;
+        right: -2rem;
       }
     }
     .d-none {
@@ -77,6 +101,7 @@ nav {
   }
 }
 
+// mobile view css
 @media only screen and (max-width: 1023px) {
   nav {
     display: flex;
@@ -108,23 +133,28 @@ nav {
       rgba(0, 0, 0, 0.642) 30%,
       #fff 0 100%
     );
+    // selects arrow img without the submenu img
+    > li > img {
+      margin-left: 0.58rem;
+      width: 0.8rem;
+    }
     li {
       padding-inline: 1rem;
       line-height: 2.5;
       display: block;
-      // img {
-      // margin-left: 0.58rem;
-      // width: 0.8rem;
-      // }
+      .accordion-toggle {
+        top: 0;
+        left: 0.2rem;
+        width: 0.8rem;
+        padding-top: 1rem;
+        padding-bottom: 0.8rem;
+        padding-left: 5.2rem;
+        padding-right: 0.5rem;
+      }
       > ul {
         padding-left: 0;
         li {
           padding-left: 1.5rem;
-          // & img {
-          //   margin-left: 0;
-          //   margin-right: 0.8rem;
-          //   width: 1rem;
-          // }
         }
       }
     }
