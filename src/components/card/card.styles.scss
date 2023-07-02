@@ -46,7 +46,7 @@
 @media only screen and (min-width: 768px) {
   .card-container {
     // direction: rtl;
-    width: min(100% - 4rem, 60rem);
+    width: min(100% - 4rem, 55rem);
     // min-height: (35rem);
     grid-template-columns: 1fr 1fr;
     picture {
@@ -67,5 +67,20 @@
         margin-left: 0;
       }
     }
+  }
+}
+
+/* large devices (landscape tablets, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+  .card-container {
+    width: min(100% - 4rem, 60rem);
+    // min-height: (35rem);
+    grid-template-columns: 1.2fr 1fr;
+    h2 {
+      margin-top: 6rem;
+    }
+  }
+  picture {
+    margin-left: 3rem;
   }
 }
